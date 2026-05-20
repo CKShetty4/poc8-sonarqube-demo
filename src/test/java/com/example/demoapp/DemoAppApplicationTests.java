@@ -9,8 +9,8 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 
-@WebMvcTest(HelloController.class)
-public class HelloControllerTest {
+@WebMvcTest(DemoAppApplication.class)
+public class DemoAppApplicationTests {
 
     @Autowired
     private MockMvc mockMvc;
