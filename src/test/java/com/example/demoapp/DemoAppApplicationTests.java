@@ -2,19 +2,24 @@ package com.example.demoapp;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.context.ApplicationContext;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.test.web.servlet.MockMvc;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 
-@SpringBootTest
-class DemoAppApplicationTests {
+@WebMvcTest(HelloController.class)
+public class HelloControllerTest {
 
     @Autowired
-    private ApplicationContext context;
+    private MockMvc mockMvc;
 
     @Test
-    void contextLoads() {
-        assertNotNull(context);
+    void testHomePage() throws Exception {
+
+        mockMvc.perform(get("/"))
+                .andExpect(status().isOk())
+                .andExpect(content().string(org.hamcrest.Matchers.containsString("Welcome, chinmay.kshetty!")));
     }
 }
