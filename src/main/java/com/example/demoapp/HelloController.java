@@ -81,7 +81,7 @@ public class HelloController {
                     <div class="container">
                         <h1>Demo Spring Boot Page</h1>
 
-                        <p>Welcome to your beautifully styled demo application!</p>
+                        <p>Welcome to My demo application!</p>
 
                         <pre>
                                   ____ _  ______  _          _   _
@@ -95,7 +95,7 @@ Welcome, chinmay.kshetty!
                         </pre>
 
                         <div class="footer">
-                            Made with Spring Boot ❤️
+                            This is Just for the Demo.
                         </div>
                     </div>
 
